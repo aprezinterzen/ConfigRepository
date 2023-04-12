@@ -1,5 +1,6 @@
 server:
   port: 9898
+  message: TEST
 pippo: pippo
 
 spring:
