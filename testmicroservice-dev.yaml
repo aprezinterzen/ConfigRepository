@@ -2,3 +2,7 @@ server:
   port: 9898
 
 pippo: pippo
+
+spring:
+  application:
+    name: testmicroservice
