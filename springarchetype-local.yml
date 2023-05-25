@@ -11,6 +11,7 @@
 #      securityCollections:
 #        - patterns:
 #            - "/secured/*"
+spring:
   security:
     oauth2:
       resourceserver:
@@ -19,12 +20,6 @@
           resolve-mode: jwt
           jwt:
             authorities-converter: io.quantics.multitenant.oauth2.config.KeycloakRealmAuthoritiesConverter
-  config:
-    import: "optional:configserver:"
-    boot:
-      admin:
-        client:
-          url: ${ADMIN_SERVER_URL:http://localhost:8761/eureka/adminserver}
   management:
     endpoints:
       web:
