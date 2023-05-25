@@ -11,6 +11,7 @@
 #      securityCollections:
 #        - patterns:
 #            - "/secured/*"
+spring:
   security:
     oauth2:
       resourceserver:
