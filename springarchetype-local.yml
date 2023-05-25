@@ -12,15 +12,16 @@
 #        - patterns:
 #            - "/secured/*"
 
+
 spring:
   security:
     oauth2:
       resourceserver:
         multitenant:
           enabled: true
-          header:
-              header-name: X-TENANT-ID
-          resolve-mode: header
+          resolve-mode: jwt
+          jwt:
+            authorities-converter: io.quantics.multitenant.oauth2.config.KeycloakRealmAuthoritiesConverter
   config:
     import: "optional:configserver:"
     boot:
@@ -40,5 +41,12 @@ spring:
       dialect: org.hibernate.dialect.PostgreSQL10Dialect
       ddl-auto: update
 
+
 server:
   port: 8081
+  
+logging:
+  level:
+    org:
+     springframework:
+      web: TRACE
