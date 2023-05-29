@@ -1,12 +1,4 @@
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        multitenant:
-          enabled: true
-          resolve-mode: jwt
-          jwt:
-            authorities-converter: io.quantics.multitenant.oauth2.config.KeycloakRealmAuthoritiesConverter
   management:
     endpoints:
       web:
